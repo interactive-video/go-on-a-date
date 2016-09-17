@@ -6,13 +6,16 @@
 history = [0]
 
 # timestamps of scene starts in seconds
-sceneStarts = [0, 46, 67.9, 87,108,151,181.7,215,256.5,279,305.5,321.75,340.75,361.9,
-	392.75,409.75,432.75,453.5,472.2,485.75,506.8,526,555.4,588.75,616,1000]
+sceneStarts = [0, 46, 67.9, 87,108,151,181.7,215,256.5,279,305.5,321.75,340.75,361.9, 377, 392.75,409.75,432.75,453.5,472.2,485.75,506.8,526,555.4,588.75,616,1000]
 
-# choice button coords [button 1: [[xMin, xMax], [yMin, yMax]],...]
-normalChooseCoords = [[[93, 325], [333, 400]], [[416, 656], [337, 400]]]
-tallChooseCoords = [[[94, 325], [318, 433]], [[418, 651], [315, 436]]]
+# choice button coords [button left: [[xMin, xMax], [yMin, yMax]], button right: ...]
+normalChooseCoords = [[[63, 293], [378, 439]], [[389, 620], [377, 435]]]
+tallChooseCoords = [[[60, 293], [357, 474]], [[389, 620], [359, 474]]]
 naChooseCoords = [[[-1, -1], [-1, -1]], [[-1, -1], [-1, -1]]]
+
+# which scene links to which scene 
+# [[0's left scene #, 0's right scene #], [1's left scene #, 1's right scene #],....]
+sceneLinks = [[1, 9], [2, 19], [5, 3], [4, 7], [25, 0], [6, 8], [25, 0], [25, 0], [25, 0], [10, 15], [11, 14], [12, 13], [25, 0], [25, 0], [15, 18], [25, 0], [18, 17], [25, 0], [25, 0], [25, 0], [21, 22], [4, 7], [23, 24], [25, 0], [25, 0]]
 
 # choose button coords for all scenes
 chooseCoords = [
@@ -173,20 +176,31 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 	chooseRight = chooseCoords[currScene][1]
 	chooseRightX = chooseRight[0]
 	chooseRightY = chooseRight[1]
-
+	
 	if xCoord >= chooseLeftX[0] and xCoord <= chooseLeftX[1] and yCoord >= chooseLeftY[0] and yCoord <= chooseLeftY[1]
 		print "pressed left"
+		currScene = history[history.length - 1]
+		nextScene = sceneLinks[currScene][0]
+		history.push(nextScene)
+		videoLayer.player.fastSeek(sceneStarts[nextScene])
 		#videoLayer.player.fastSeek(sceneStarts[currScene + 1] - 10)
 	else if xCoord >= chooseRightX[0] and xCoord <= chooseRightX[1] and yCoord >= chooseRightY[0] and yCoord <= chooseRightY[1]
 		print "pressed right"
+		currScene = history[history.length - 1]
+		nextScene = sceneLinks[currScene][1]
+		history.push(nextScene)
+		videoLayer.player.fastSeek(sceneStarts[nextScene])
 
 
 # Function to handle forward scene choice
 forwardScene.on Events.Tap, (event) ->
+	
+	print videoLayer.player.currentTime 
 	xCoord = event.point.x
 	yCoord = event.point.y
-	print event.point
-	sceneChooseButtonChecker(xCoord, yCoord)
+	
+	if true in [Math.round(videoLayer.player.currentTime) in  [Math.round(x)-11.. Math.round(x)] for x in sceneStarts][0]
+		sceneChooseButtonChecker(xCoord, yCoord)
 	#print event.point
 	#if xCoord > 93 and xCoord < 326 and yCoord > 359 and yCoord < 421
 #		print "CHOICE A"

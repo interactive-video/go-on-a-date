@@ -21,6 +21,7 @@
 .git/objects/03/bf49b3534a6795bd41a5f38597d971cbadcf14
 .git/objects/04/2c2608f07bb177f7fcc85ebf2a1aa9ec523d9b
 .git/objects/06/671c21f7c6264083ce47866f97a49a56b2f5ea
+.git/objects/0c/3dc52d01c186268fff5956fbf00c642bc6745d
 .git/objects/0f/2b8ca21462902b87ec3df694a80720d22cb1b5
 .git/objects/16/5b5d1cd193ab428346c038fa14484a393d4092
 .git/objects/16/7bdabdf5b5cc370ff7f4744f33fe18733fcb5a
@@ -44,6 +45,7 @@
 .git/objects/5a/26706f52b6b72b248ff01efed94432a3b052b5
 .git/objects/5a/bcbe34c26798cb0dd1ed3a7ade90872dc5067b
 .git/objects/5c/e9116382e06d89828828e895200d1a956e8928
+.git/objects/5e/7b8d6ed41fbeb51fc4e5471dc553de3733a5f5
 .git/objects/60/9c599272eff9e4cf6cebc080326e8c0e1ca563
 .git/objects/61/11dcac8dfd11ef6819abdd50333f9086cf0b2d
 .git/objects/63/d5408f1a402832052c36a9dc9ba49afa98f336
@@ -65,6 +67,7 @@
 .git/objects/8d/17f599f57407270746ac333fdf5ff8b2e07b80
 .git/objects/8d/2ca62e72d849ef93ccc080118a3af481288a9c
 .git/objects/8f/6e544445e53b23647e38e67893f5b0d89a0ed2
+.git/objects/90/255981ebf88f71ce4a02d89c71bb4352ab85ec
 .git/objects/93/20b113ac218205ab12c7cafbb4652ce7c09508
 .git/objects/93/258e26ea2fd13d54b908c1069bc3c60d0857df
 .git/objects/93/8e8e9f6b2fff85b4ddc58079527636d69787a4
@@ -72,6 +75,8 @@
 .git/objects/9c/cd8cce8d05be2ad8f4c63800f697a238266fd2
 .git/objects/9e/909f6fdcb4d98998a59fecaa54b8073401f805
 .git/objects/a3/ae7315264a6894cc3d0007169d1024124a7d26
+.git/objects/a3/cb1b2415bf060d25c87859cff1f1527937166f
+.git/objects/a5/ed54282b9a5322838cf44522f7cf9ff4e4241c
 .git/objects/a7/0705dbf951f09e31894e4f13f6576d89877420
 .git/objects/a7/5914107889b600677c6818666ed154f4940532
 .git/objects/b4/6074382b8a8528b9698a979da6c7245fba4009
@@ -96,7 +101,8 @@
 .git/refs/heads/master
 .git/refs/remotes/origin/master
 app.coffee
-framer/backups/backup-2016-09-16 16.24.54.coffee
+config
+description
 framer/backups/backup-2016-09-16 16.26.54.coffee
 framer/backups/backup-2016-09-16 16.27.54.coffee
 framer/backups/backup-2016-09-16 16.28.54.coffee
@@ -117,6 +123,7 @@ framer/backups/backup-2016-09-16 17.02.54.coffee
 framer/backups/backup-2016-09-16 17.03.54.coffee
 framer/backups/backup-2016-09-16 17.04.54.coffee
 framer/backups/backup-2016-09-16 17.05.54.coffee
+framer/backups/backup-2016-09-16 17.16.22.coffee
 framer/coffee-script.js
 framer/config.json
 framer/framer.generated.js
@@ -147,6 +154,16 @@ framer/mirror.css
 framer/preview.png
 framer/style.css
 framer/version
+HEAD
+hooks/applypatch-msg.sample
+hooks/commit-msg.sample
+hooks/post-update.sample
+hooks/pre-applypatch.sample
+hooks/pre-commit.sample
+hooks/pre-push.sample
+hooks/pre-rebase.sample
+hooks/prepare-commit-msg.sample
+hooks/update.sample
 images/back.png
 images/choose.png
 images/morning.mp4
@@ -156,4 +173,5 @@ images/surfing.mp4
 images/volume_off.png
 images/volume_on.png
 index.html
+info/exclude
 modules/myModule.coffee
