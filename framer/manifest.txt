@@ -1,25 +1,122 @@
+.git/COMMIT_EDITMSG
+.git/config
+.git/description
+.git/FETCH_HEAD
+.git/HEAD
+.git/hooks/applypatch-msg.sample
+.git/hooks/commit-msg.sample
+.git/hooks/post-update.sample
+.git/hooks/pre-applypatch.sample
+.git/hooks/pre-commit.sample
+.git/hooks/pre-push.sample
+.git/hooks/pre-rebase.sample
+.git/hooks/prepare-commit-msg.sample
+.git/hooks/update.sample
+.git/index
+.git/info/exclude
+.git/logs/HEAD
+.git/logs/refs/heads/add_choices
+.git/logs/refs/heads/master
+.git/logs/refs/remotes/origin/master
+.git/objects/03/bf49b3534a6795bd41a5f38597d971cbadcf14
+.git/objects/04/2c2608f07bb177f7fcc85ebf2a1aa9ec523d9b
+.git/objects/06/671c21f7c6264083ce47866f97a49a56b2f5ea
+.git/objects/0f/2b8ca21462902b87ec3df694a80720d22cb1b5
+.git/objects/16/5b5d1cd193ab428346c038fa14484a393d4092
+.git/objects/16/7bdabdf5b5cc370ff7f4744f33fe18733fcb5a
+.git/objects/1a/b20d41b8f51c6d5fbe78ec9923a49c85d2224c
+.git/objects/1c/eeb5e4351a9d173658e5dcdd516bcb086584cd
+.git/objects/1d/17a603b5ea5e990883f8cc6e2e815d2bab175b
+.git/objects/27/da76d63c4dfcbf6ee6d6a2744f98aa105aac04
+.git/objects/35/dc16f1d420bce2ed881cdd7a117f623a7013bc
+.git/objects/3c/a5909bd713124986e85227fd8ca08d2c589b6a
+.git/objects/3d/51b61c5a655ff2712756c27c2fde2401237e7d
+.git/objects/3e/00cddf70e345b9eb0b35c91dc5e4190a7b12f6
+.git/objects/43/f41ba75e8e0924c437e216b591eb3428b13d17
+.git/objects/45/5a04efa394b5e33523b0c788db990903884b1c
+.git/objects/45/79adea871234e9b2b7c40c969e37eb94898e46
+.git/objects/45/fad8d81c61e8a430618540cbd72fc07c5ad35b
+.git/objects/48/96525c8ac710dfe6e3da30b3e0553d87a27a79
+.git/objects/4d/620ad8394b2f5fb5e9a020a1e1b0a7e7632f21
+.git/objects/53/10217b53ab86bb1059f39cc8a103c51711109a
+.git/objects/53/78992cbae9d5eb73022c06dbcb48802f70b1bd
+.git/objects/57/ff54e7bc665edb91d4ed55861a44462253a340
+.git/objects/5a/26706f52b6b72b248ff01efed94432a3b052b5
+.git/objects/5a/bcbe34c26798cb0dd1ed3a7ade90872dc5067b
+.git/objects/5c/e9116382e06d89828828e895200d1a956e8928
+.git/objects/60/9c599272eff9e4cf6cebc080326e8c0e1ca563
+.git/objects/61/11dcac8dfd11ef6819abdd50333f9086cf0b2d
+.git/objects/63/d5408f1a402832052c36a9dc9ba49afa98f336
+.git/objects/6a/5990671ac605bb73a9e14a4b8ab6a2515775a5
+.git/objects/6d/c230ae24bae7e937b5cf4412e7227c46e0d930
+.git/objects/6e/37a924b0ff6a994781e6bb25ce5d5e9d3f4aa2
+.git/objects/71/9a148fa1f28b687a50e16395f77f8eb7a44677
+.git/objects/73/f9f52dfcf29a97dd98848b1768d01f3e18e6ad
+.git/objects/78/efc0e6bb2efb93f3069377d60d132268441bd9
+.git/objects/79/eb9f69673bd60093f335adb07e8ddb8dc98acb
+.git/objects/7a/d0589ee9b905d29b3b91cf3f5dd06daaf6270e
+.git/objects/80/ad0c15d1a64678ea92de588541c68beed9769d
+.git/objects/85/9cfda733629062baa68be6cb0acb29c26929eb
+.git/objects/86/e23e00370117a5347fe476e12a28215eecf274
+.git/objects/87/264dd001e324e12034ab8823399cb2b264bd05
+.git/objects/89/d87155a84810e997a17df867b8ce5ed36b1596
+.git/objects/8a/b28fc9276ecb8dbdea9dbe589ad5538411abef
+.git/objects/8c/1ec927ee9738268f8d6300e7af79686803fbd6
+.git/objects/8d/17f599f57407270746ac333fdf5ff8b2e07b80
+.git/objects/8d/2ca62e72d849ef93ccc080118a3af481288a9c
+.git/objects/8f/6e544445e53b23647e38e67893f5b0d89a0ed2
+.git/objects/93/20b113ac218205ab12c7cafbb4652ce7c09508
+.git/objects/93/258e26ea2fd13d54b908c1069bc3c60d0857df
+.git/objects/93/8e8e9f6b2fff85b4ddc58079527636d69787a4
+.git/objects/9c/4f99b22a56fb8c71bac4b077baf261ac8a175e
+.git/objects/9c/cd8cce8d05be2ad8f4c63800f697a238266fd2
+.git/objects/9e/909f6fdcb4d98998a59fecaa54b8073401f805
+.git/objects/a3/ae7315264a6894cc3d0007169d1024124a7d26
+.git/objects/a7/0705dbf951f09e31894e4f13f6576d89877420
+.git/objects/a7/5914107889b600677c6818666ed154f4940532
+.git/objects/b4/6074382b8a8528b9698a979da6c7245fba4009
+.git/objects/b6/5084f53d48dacafe62b2667bf1e44a2963339f
+.git/objects/b7/318750392b8ef2ac1af58583852d318a23f014
+.git/objects/bc/17c2d9c331635a57afea0f462dc114c45043a5
+.git/objects/c2/e63c0f35091e8229065df35935de1c9ef29a17
+.git/objects/cd/9502788c7da8a9a90639d630089a12f3be17da
+.git/objects/d1/9d81ce20012061d8f499d1fb167b2f6b11a877
+.git/objects/d7/d167162c9c96d42c4cfb5374c72b26bef1ea72
+.git/objects/e3/f5c12dfdfbd364659357035624545f1a99a4ff
+.git/objects/e4/40e5c842586965a7fb77deda2eca68612b1f53
+.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+.git/objects/ef/9bf7edd1d2964df145a60f79fd3aaf2076c00d
+.git/objects/f1/2e0019bf5f5b14e2e16b307096545d0218b693
+.git/objects/f2/d47c08e1fe1d5652bb92a9d52be5e9e1dd0ebc
+.git/objects/f2/e7171bfe384ca05af77abadcb3fee5d0be36bc
+.git/objects/f5/c12f559afe694acad81ae522d99d753827e743
+.git/objects/f7/46ff14bb1832b2d51ae7054be7680b23287b88
+.git/ORIG_HEAD
+.git/refs/heads/add_choices
+.git/refs/heads/master
+.git/refs/remotes/origin/master
 app.coffee
-framer/backups/backup-2016-09-01 18.09.03.coffee
-framer/backups/backup-2016-09-01 18.10.03.coffee
-framer/backups/backup-2016-09-01 18.12.03.coffee
-framer/backups/backup-2016-09-01 18.13.03.coffee
-framer/backups/backup-2016-09-01 18.14.03.coffee
-framer/backups/backup-2016-09-01 18.15.03.coffee
-framer/backups/backup-2016-09-01 18.16.03.coffee
-framer/backups/backup-2016-09-01 18.17.03.coffee
-framer/backups/backup-2016-09-01 18.18.03.coffee
-framer/backups/backup-2016-09-01 18.19.03.coffee
-framer/backups/backup-2016-09-01 18.20.03.coffee
-framer/backups/backup-2016-09-01 18.22.03.coffee
-framer/backups/backup-2016-09-01 18.25.03.coffee
-framer/backups/backup-2016-09-01 18.27.03.coffee
-framer/backups/backup-2016-09-01 18.28.03.coffee
-framer/backups/backup-2016-09-01 18.29.03.coffee
-framer/backups/backup-2016-09-01 18.30.03.coffee
-framer/backups/backup-2016-09-01 18.31.03.coffee
-framer/backups/backup-2016-09-01 18.32.03.coffee
-framer/backups/backup-2016-09-01 22.18.07.coffee
-framer/backups/backup-2016-09-01 22.20.07.coffee
+framer/backups/backup-2016-09-16 16.24.54.coffee
+framer/backups/backup-2016-09-16 16.26.54.coffee
+framer/backups/backup-2016-09-16 16.27.54.coffee
+framer/backups/backup-2016-09-16 16.28.54.coffee
+framer/backups/backup-2016-09-16 16.29.54.coffee
+framer/backups/backup-2016-09-16 16.30.54.coffee
+framer/backups/backup-2016-09-16 16.31.54.coffee
+framer/backups/backup-2016-09-16 16.32.54.coffee
+framer/backups/backup-2016-09-16 16.33.54.coffee
+framer/backups/backup-2016-09-16 16.34.54.coffee
+framer/backups/backup-2016-09-16 16.35.54.coffee
+framer/backups/backup-2016-09-16 16.36.54.coffee
+framer/backups/backup-2016-09-16 16.37.54.coffee
+framer/backups/backup-2016-09-16 16.38.54.coffee
+framer/backups/backup-2016-09-16 16.39.54.coffee
+framer/backups/backup-2016-09-16 16.41.54.coffee
+framer/backups/backup-2016-09-16 17.00.54.coffee
+framer/backups/backup-2016-09-16 17.02.54.coffee
+framer/backups/backup-2016-09-16 17.03.54.coffee
+framer/backups/backup-2016-09-16 17.04.54.coffee
+framer/backups/backup-2016-09-16 17.05.54.coffee
 framer/coffee-script.js
 framer/config.json
 framer/framer.generated.js
