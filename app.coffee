@@ -177,6 +177,7 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 	chooseRightX = chooseRight[0]
 	chooseRightY = chooseRight[1]
 	
+	# logic for left button choice
 	if xCoord >= chooseLeftX[0] and xCoord <= chooseLeftX[1] and yCoord >= chooseLeftY[0] and yCoord <= chooseLeftY[1]
 		print "pressed left"
 		currScene = history[history.length - 1]
@@ -184,6 +185,8 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 		history.push(nextScene)
 		videoLayer.player.fastSeek(sceneStarts[nextScene])
 		#videoLayer.player.fastSeek(sceneStarts[currScene + 1] - 10)
+
+	# logic for right button choice
 	else if xCoord >= chooseRightX[0] and xCoord <= chooseRightX[1] and yCoord >= chooseRightY[0] and yCoord <= chooseRightY[1]
 		print "pressed right"
 		currScene = history[history.length - 1]
@@ -199,14 +202,9 @@ forwardScene.on Events.Tap, (event) ->
 	xCoord = event.point.x
 	yCoord = event.point.y
 	
+	# if a click occurs while buttons are active during scene, check if a button was clicked
 	if true in [Math.round(videoLayer.player.currentTime) in  [Math.round(x)-11.. Math.round(x)] for x in sceneStarts][0]
 		sceneChooseButtonChecker(xCoord, yCoord)
-	#print event.point
-	#if xCoord > 93 and xCoord < 326 and yCoord > 359 and yCoord < 421
-#		print "CHOICE A"
-#	else if xCoord > 419 and xCoord < 649 and yCoord > 360 and yCoord < 422
-#		print "CHOICE B"
-	#print event.point.x
 
 # Volume on/off toggle
 volumeButton.on Events.Click, ->
