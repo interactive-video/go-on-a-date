@@ -184,7 +184,6 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 		nextScene = sceneLinks[currScene][0]
 		history.push(nextScene)
 		videoLayer.player.fastSeek(sceneStarts[nextScene])
-		#videoLayer.player.fastSeek(sceneStarts[currScene + 1] - 10)
 
 	# logic for right button choice
 	else if xCoord >= chooseRightX[0] and xCoord <= chooseRightX[1] and yCoord >= chooseRightY[0] and yCoord <= chooseRightY[1]

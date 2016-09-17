@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = false
+	sharedrepository = 0666
+[receive]
+	denyNonFastforwards = true

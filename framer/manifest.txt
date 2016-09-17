@@ -38,10 +38,12 @@
 .git/objects/45/79adea871234e9b2b7c40c969e37eb94898e46
 .git/objects/45/fad8d81c61e8a430618540cbd72fc07c5ad35b
 .git/objects/48/96525c8ac710dfe6e3da30b3e0553d87a27a79
+.git/objects/4c/22a9e8089ecd372920ee20a0ae94817883e9c4
 .git/objects/4d/620ad8394b2f5fb5e9a020a1e1b0a7e7632f21
 .git/objects/53/10217b53ab86bb1059f39cc8a103c51711109a
 .git/objects/53/78992cbae9d5eb73022c06dbcb48802f70b1bd
 .git/objects/57/ff54e7bc665edb91d4ed55861a44462253a340
+.git/objects/59/66e08f43728037b85c3bb3f302231456bdc469
 .git/objects/5a/26706f52b6b72b248ff01efed94432a3b052b5
 .git/objects/5a/bcbe34c26798cb0dd1ed3a7ade90872dc5067b
 .git/objects/5c/e9116382e06d89828828e895200d1a956e8928
@@ -79,23 +81,32 @@
 .git/objects/a5/ed54282b9a5322838cf44522f7cf9ff4e4241c
 .git/objects/a7/0705dbf951f09e31894e4f13f6576d89877420
 .git/objects/a7/5914107889b600677c6818666ed154f4940532
+.git/objects/af/f7ea0d1b566a6297a225f847de1b84c15355e4
 .git/objects/b4/6074382b8a8528b9698a979da6c7245fba4009
 .git/objects/b6/5084f53d48dacafe62b2667bf1e44a2963339f
 .git/objects/b7/318750392b8ef2ac1af58583852d318a23f014
 .git/objects/bc/17c2d9c331635a57afea0f462dc114c45043a5
+.git/objects/c2/7a0f90639af9b70d8797af3b5e3f75ccd01263
 .git/objects/c2/e63c0f35091e8229065df35935de1c9ef29a17
+.git/objects/c7/03ac1ab4c4515dff0d642b02f9a7fc6f4843f9
+.git/objects/c9/dad1d198ceca73d8ebc33947261f43e9109afa
 .git/objects/cd/9502788c7da8a9a90639d630089a12f3be17da
 .git/objects/d1/9d81ce20012061d8f499d1fb167b2f6b11a877
 .git/objects/d7/d167162c9c96d42c4cfb5374c72b26bef1ea72
+.git/objects/df/bdffa45a9a826a7bf7253152b72ffc323d462a
 .git/objects/e3/f5c12dfdfbd364659357035624545f1a99a4ff
 .git/objects/e4/40e5c842586965a7fb77deda2eca68612b1f53
 .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+.git/objects/ee/8b78e9c5c0f7157713d68746924177adf98b2b
 .git/objects/ef/9bf7edd1d2964df145a60f79fd3aaf2076c00d
 .git/objects/f1/2e0019bf5f5b14e2e16b307096545d0218b693
+.git/objects/f2/53946f818ccb3c5a5fd96f1199fe29dba61d6c
 .git/objects/f2/d47c08e1fe1d5652bb92a9d52be5e9e1dd0ebc
 .git/objects/f2/e7171bfe384ca05af77abadcb3fee5d0be36bc
 .git/objects/f5/c12f559afe694acad81ae522d99d753827e743
 .git/objects/f7/46ff14bb1832b2d51ae7054be7680b23287b88
+.git/objects/fa/41c0bab4310532229cd872687c3dce6a768b59
+.git/objects/fc/522cec6835a1674b0fa563f4876448fa8f2e20
 .git/ORIG_HEAD
 .git/refs/heads/add_choices
 .git/refs/heads/master
@@ -103,14 +114,6 @@
 app.coffee
 config
 description
-framer/backups/backup-2016-09-16 16.26.54.coffee
-framer/backups/backup-2016-09-16 16.27.54.coffee
-framer/backups/backup-2016-09-16 16.28.54.coffee
-framer/backups/backup-2016-09-16 16.29.54.coffee
-framer/backups/backup-2016-09-16 16.30.54.coffee
-framer/backups/backup-2016-09-16 16.31.54.coffee
-framer/backups/backup-2016-09-16 16.32.54.coffee
-framer/backups/backup-2016-09-16 16.33.54.coffee
 framer/backups/backup-2016-09-16 16.34.54.coffee
 framer/backups/backup-2016-09-16 16.35.54.coffee
 framer/backups/backup-2016-09-16 16.36.54.coffee
@@ -124,6 +127,14 @@ framer/backups/backup-2016-09-16 17.03.54.coffee
 framer/backups/backup-2016-09-16 17.04.54.coffee
 framer/backups/backup-2016-09-16 17.05.54.coffee
 framer/backups/backup-2016-09-16 17.16.22.coffee
+framer/backups/backup-2016-09-16 17.21.25.coffee
+framer/backups/backup-2016-09-16 17.30.47.coffee
+framer/backups/backup-2016-09-17 11.26.05.coffee
+framer/backups/backup-2016-09-17 11.27.05.coffee
+framer/backups/backup-2016-09-17 11.28.05.coffee
+framer/backups/backup-2016-09-17 11.29.05.coffee
+framer/backups/backup-2016-09-17 11.41.05.coffee
+framer/backups/backup-2016-09-17 11.42.05.coffee
 framer/coffee-script.js
 framer/config.json
 framer/framer.generated.js
@@ -152,6 +163,8 @@ framer/images/icon-share@2x.png
 framer/manifest.txt
 framer/mirror.css
 framer/preview.png
+framer/social-1200x630.png
+framer/social-880x460.png
 framer/style.css
 framer/version
 HEAD
@@ -166,7 +179,7 @@ hooks/prepare-commit-msg.sample
 hooks/update.sample
 images/back.png
 images/choose.png
-images/morning.mp4
+images/morning_small.mp4
 images/pause.png
 images/play.png
 images/surfing.mp4
