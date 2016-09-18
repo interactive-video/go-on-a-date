@@ -6,49 +6,33 @@
 history = [0]
 
 # timestamps of scene starts in seconds
-sceneStarts = [0, 46, 67.9, 87,108,151,181.7,215,256.5,279,305.5,321.75,340.75,361.9, 377, 392.75,409.75,432.75,453.5,472.2,485.75,506.8,526,555.4,588.75,616,1000]
+sceneStarts = [0, 31.5, 51.8, 93.5, 123.5, 165.8, 198.9, 1000]
+
+# scene descriptions 
+# [go on date?, yes, pay half, no don't pay - go to park?,yes to park, no to park]
+
+# timestamp of choice starts in seconds
+choiceStarts = [24, 48, 84, 121, 160, 194, 220]
 
 # choice button coords [button left: [[xMin, xMax], [yMin, yMax]], button right: ...]
-normalChooseCoords = [[[63, 293], [378, 439]], [[389, 620], [377, 435]]]
-tallChooseCoords = [[[60, 293], [357, 474]], [[389, 620], [359, 474]]]
-naChooseCoords = [[[-1, -1], [-1, -1]], [[-1, -1], [-1, -1]]]
+normalChooseCoords = [[[58, 207], [352, 377]], [[468, 584], [352, 377]]]
+tallChooseCoords = [[[58, 207], [330, 390]], [[448, 584], [310, 390]]]
+goToBeginningChooseCords = [[[58, 207], [352, 377]], [[-1, -1], [-1, -1]]]
 
 # which scene links to which scene 
 # [[0's left scene #, 0's right scene #], [1's left scene #, 1's right scene #],....]
-sceneLinks = [[1, 9], [2, 19], [5, 3], [4, 7], [25, 0], [6, 8], [25, 0], [25, 0], [25, 0], [10, 15], [11, 14], [12, 13], [25, 0], [25, 0], [15, 18], [25, 0], [18, 17], [25, 0], [25, 0], [25, 0], [21, 22], [4, 7], [23, 24], [25, 0], [25, 0]]
+sceneLinks = [[1, 3], [2, 4], [0, 0], [5, 6], [5, 6], [0, 0], [0, 0]]
 
 # choose button coords for all scenes
 chooseCoords = [
 	normalChooseCoords,
 	tallChooseCoords,
+	goToBeginningChooseCords,
 	normalChooseCoords,
 	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	tallChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	tallChooseCoords,
-	normalChooseCoords,
-	tallChooseCoords,
-	normalChooseCoords,
-	normalChooseCoords,
-	naChooseCoords
+	goToBeginningChooseCords,
+	goToBeginningChooseCords
 ]
-# nextStepScenes [[leftScene, rightScene], ...]
-
-#time given for the choice in seconds
-choiceTimer = 10
 
 # setup a container to hold everything
 videoContainer = new Layer
@@ -62,11 +46,17 @@ videoContainer = new Layer
 videoLayer = new VideoLayer
 	width: 640
 	height: 360
-	video: "images/morning.mp4"
+	video: "images/dating_small_2.m4v"
 	superLayer: videoContainer
 
 # center everything on screen
 videoContainer.center()
+
+videoLayer.player.setAttribute('preload', 'auto')
+window.setInterval( -> 
+	print videoLayer.player.buffered.start(0)
+	print videoLayer.player.buffered.end(0)
+, 1000)
 
 # when the video is clicked
 videoLayer.on Events.Click, ->
@@ -140,11 +130,21 @@ skipToChoiceButton = new Layer
 # position back-scene button to the right of play
 skipToChoiceButton.x = backButton.maxX
 
+# home button
+homeButton = new Layer
+	width: 48
+	height: 48
+	image: 'images/home.png'
+	superLayer: controlBar
+	
+# position home button to the right of choose
+homeButton.x = skipToChoiceButton.maxX	
+
 # forward-scene layer
 forwardScene = new Layer
 	width: 640
 	height: 300
-	video: "images/morning.mp4"
+	#video: "images/morning.mp4"
 	superLayer: videoContainer
 	backgroundColor: ""
 
@@ -182,25 +182,29 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 		print "pressed left"
 		currScene = history[history.length - 1]
 		nextScene = sceneLinks[currScene][0]
-		history.push(nextScene)
-		videoLayer.player.fastSeek(sceneStarts[nextScene])
+		#history.push(nextScene)
+		
+		videoLayer.player.currentTime = sceneStarts[nextScene]
+		videoLayer.player.play()
+	#videoLayer.player.fastSeek(sceneStarts[nextScene])
 
 	# logic for right button choice
 	else if xCoord >= chooseRightX[0] and xCoord <= chooseRightX[1] and yCoord >= chooseRightY[0] and yCoord <= chooseRightY[1]
 		print "pressed right"
 		currScene = history[history.length - 1]
 		nextScene = sceneLinks[currScene][1]
-		history.push(nextScene)
-		videoLayer.player.fastSeek(sceneStarts[nextScene])
-
+		#history.push(nextScene)
+		
+		videoLayer.player.currentTime = sceneStarts[nextScene]
+		videoLayer.player.play()
+		#videoLayer.player.fastSeek(sceneStarts[nextScene])
 
 # Function to handle forward scene choice
 forwardScene.on Events.Tap, (event) ->
 	
-	print videoLayer.player.currentTime 
 	xCoord = event.point.x
 	yCoord = event.point.y
-	
+	print videoLayer.player.currentTime
 	# if a click occurs while buttons are active during scene, check if a button was clicked
 	if true in [Math.round(videoLayer.player.currentTime) in  [Math.round(x)-11.. Math.round(x)] for x in sceneStarts][0]
 		sceneChooseButtonChecker(xCoord, yCoord)
@@ -227,7 +231,13 @@ backButton.on Events.Click, ->
 	history.pop()
 	if (history.length == 0)
 		history.push(0)
-	videoLayer.player.fastSeek(sceneStarts[history[history.length - 1]])
+	
+	print history[history.length - 1] 
+	
+	videoLayer.player.currentTime = choiceStarts[history[history.length - 1]]
+
+	videoLayer.player.play()
+		#videoLayer.player.fastSeek(choiceStarts[history[history.length - 1]])
 
 	# simple bounce effect on click
 	backButton.scale = 1.15
@@ -240,7 +250,11 @@ backButton.on Events.Click, ->
 # Function to handle choose button
 skipToChoiceButton.on Events.Click, ->
 	currScene = history[history.length - 1]
-	videoLayer.player.fastSeek(sceneStarts[currScene + 1] - 10)
+	print choiceStarts[currScene]
+	
+	videoLayer.player.currentTime = choiceStarts[currScene]
+	videoLayer.player.play()
+	#videoLayer.player.fastSeek(choiceStarts[currScene])
 
 	# simple bounce effect on click
 	skipToChoiceButton.scale = 1.15
@@ -250,6 +264,22 @@ skipToChoiceButton.on Events.Click, ->
 		time:0.1
 		curve:'spring(900,30,0)'
 
+# Function to handle home button
+homeButton.on Events.Click, ->
+	videoLayer.player.currentTime = 0
+	videoLayer.player.play()
+	#videoLayer.player.fastSeek(0)
+
+	# simple bounce effect on click
+	skipToChoiceButton.scale = 1.15
+	skipToChoiceButton.animate
+		properties:
+			scale:1
+		time:0.1
+		curve:'spring(900,30,0)'
+		
+	history = [0]
+		
 # white timeline bar
 timeline = new Layer
 	width:455
@@ -298,13 +328,16 @@ scrubber.draggable.overdrag = false
 
 # helper function for scene transitions
 sceneUpdate = (currTime, targetScene) ->
+	
 	currScene = history[history.length - 1]
-	if sceneStarts[targetScene] < currTime and currTime <= sceneStarts[targetScene+1] and currScene != targetScene
+	if sceneStarts[targetScene] + 0.3  <= currTime  and currTime < sceneStarts[targetScene+1] - 0.3 and currScene != targetScene
+
 		currScene = targetScene
 		history.push(currScene)
 
-		print "lastScene: ", history[history.length - 2]
-		print "currScene: ", currScene
+		#print "lastScene: ", history[history.length - 2]
+		#print "currScene: ", currScene
+		print "history: ", history
 
 # Update the progress bar and scrubber AND CURR/LAST SCENE as video plays
 videoLayer.player.addEventListener "timeupdate", ->
