@@ -8,7 +8,7 @@ history = [0]
 # timestamps of scene starts in seconds
 sceneStarts = [0, 31.5, 51.8, 93.5, 124.5, 167.8, 198.9, 1000]
 
-# scene descriptions 
+# scene descriptions
 # [go on date?, yes, pay half, no don't pay - go to park?,yes to park, no to park]
 
 # timestamp of choice starts in seconds
@@ -19,7 +19,7 @@ normalChooseCoords = [[[110, 450], [340, 420]], [[960, 1220], [340, 420]]]
 tallChooseCoords = [[[85, 370], [250, 440]], [[930,1250], [250, 440]]]
 goToBeginningChooseCords = [[[100, 465], [340, 420]], [[-1, -1], [-1, -1]]]
 
-# which scene links to which scene 
+# which scene links to which scene
 # [[0's left scene #, 0's right scene #], [1's left scene #, 1's right scene #],....]
 sceneLinks = [[1, 3], [2, 4], [0, 0], [5, 6], [5, 6], [0, 0], [0, 0]]
 
@@ -54,7 +54,7 @@ videoContainer.center()
 
 # show load times
 videoLayer.player.setAttribute('preload', 'auto')
-#window.setInterval( -> 
+#window.setInterval( ->
 #	print videoLayer.player.buffered.start(0)
 #	print videoLayer.player.buffered.end(0)
 #, 1000)
@@ -70,7 +70,7 @@ videoLayer.player.setAttribute('preload', 'auto')
 # 		else pause the video
 # 		videoLayer.player.pause()
 # 		playButton.image = 'images/play.png'
-# 
+#
 # 	simple bounce effect on click
 # 	playButton.scale = 1.15
 # 	playButton.animate
@@ -85,9 +85,9 @@ leftIconLayer = new Layer
 	height: 100
 	superLayer: videoContainer
 	opacity: 0.0
-	
+
 leftIconLayer.states.add
-	normal: 
+	normal:
 		image:'images/icon.svg'
 		x: 200
 		y: 340
@@ -99,9 +99,9 @@ rightIconLayer = new Layer
 	height: 100
 	superLayer: videoContainer
 	opacity: 0.0
-	
+
 rightIconLayer.states.add
-	normal: 
+	normal:
 		image:'images/icon.svg'
 		x: 1020
 		y: 340
@@ -165,9 +165,9 @@ homeButton = new Layer
 	height: 100
 	image: 'images/home.png'
 	superLayer: controlBar
-	
+
 # position home button to the right of choose
-homeButton.x = skipToChoiceButton.maxX	
+homeButton.x = skipToChoiceButton.maxX
 
 # forward-scene layer
 forwardScene = new Layer
@@ -205,14 +205,14 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 	chooseRight = chooseCoords[currScene][1]
 	chooseRightX = chooseRight[0]
 	chooseRightY = chooseRight[1]
-	
+
 	# logic for left button choice
 	if xCoord >= chooseLeftX[0] and xCoord <= chooseLeftX[1] and yCoord >= chooseLeftY[0] and yCoord <= chooseLeftY[1]
 		print "pressed left"
 		currScene = history[history.length - 1]
 		nextScene = sceneLinks[currScene][0]
 		#history.push(nextScene)
-		
+
 		videoLayer.player.currentTime = sceneStarts[nextScene]
 		videoLayer.player.play()
 	#videoLayer.player.fastSeek(sceneStarts[nextScene])
@@ -223,14 +223,14 @@ sceneChooseButtonChecker = (xCoord, yCoord) ->
 		currScene = history[history.length - 1]
 		nextScene = sceneLinks[currScene][1]
 		#history.push(nextScene)
-		
+
 		videoLayer.player.currentTime = sceneStarts[nextScene]
 		videoLayer.player.play()
 		#videoLayer.player.fastSeek(sceneStarts[nextScene])
 
 # Function to handle forward scene choice
 forwardScene.on Events.Tap, (event) ->
-	
+
 	xCoord = event.point.x
 	yCoord = event.point.y
 	print event.point
@@ -260,9 +260,9 @@ backButton.on Events.Click, ->
 	history.pop()
 	if (history.length == 0)
 		history.push(0)
-	
-	print history[history.length - 1] 
-	
+
+	print history[history.length - 1]
+
 	videoLayer.player.currentTime = choiceStarts[history[history.length - 1]]
 
 	videoLayer.player.play()
@@ -280,7 +280,7 @@ backButton.on Events.Click, ->
 skipToChoiceButton.on Events.Click, ->
 	currScene = history[history.length - 1]
 	print choiceStarts[currScene]
-	
+
 	videoLayer.player.currentTime = choiceStarts[currScene]
 	videoLayer.player.play()
 	#videoLayer.player.fastSeek(choiceStarts[currScene])
@@ -306,9 +306,9 @@ homeButton.on Events.Click, ->
 			scale:1
 		time:0.1
 		curve:'spring(900,30,0)'
-		
+
 	history = [0]
-		
+
 # white timeline bar
 #timeline = new Layer
 #	width:455
@@ -341,23 +341,23 @@ homeButton.on Events.Click, ->
 
 # make scrubber draggable
 # scrubber.draggable.enabled = true
-# 
+#
 # # limit dragging along x-axis
 # scrubber.draggable.speedY = 0
-# 
+#
 # # prevent scrubber from dragging outside of timeline
 # scrubber.draggable.constraints =
 # 	x:0
 # 	y:timeline.midY
 # 	width:timeline.width
 # 	height:-10
-# 
+#
 # # Disable dragging beyond constraints
 # scrubber.draggable.overdrag = false
 
 # helper function for scene transitions
 sceneUpdate = (currTime, targetScene) ->
-	
+
 	currScene = history[history.length - 1]
 	if sceneStarts[targetScene] + 0.3  <= currTime  and currTime < sceneStarts[targetScene+1] - 0.3 and currScene != targetScene
 
@@ -380,7 +380,7 @@ videoLayer.player.addEventListener "timeupdate", ->
 	#Update curr and last scene if scene has just switched
 	currTime = videoLayer.player.currentTime
 	sceneUpdate(currTime, scene) for scene in [0..sceneStarts.length]
-	
+
 	# check if currentTime is during a choice - then display icon
 	if true in [Math.round(currTime) in  [Math.round(choiceStarts[x]).. Math.round(sceneStarts[x+1])-1.5] for x in [0..sceneStarts.length-2]][0]
 		if leftIconLayer.states.current == "default"
@@ -396,11 +396,11 @@ videoLayer.player.addEventListener "timeupdate", ->
 # Pause the video at start of drag
 # scrubber.on Events.DragStart, ->
 # 	videoLayer.player.pause()
-# 
+#
 # Update Video Layer to current frame when scrubber is moved
 # scrubber.on Events.DragMove, ->
 # 	progress.width = scrubber.x + 10
-# 
+#
 # When finished dragging set currentTime and play video
 # scrubber.on Events.DragEnd, ->
 # 	newTime = Utils.round(videoLayer.player.duration * (scrubber.x / timeline.width),0);
